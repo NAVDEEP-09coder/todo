@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Data Storage</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #data-list {
+        list-style: none;
+        padding: 0;
+      }
+      #data-list li {
+        margin: 5px 0;
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #data-list li button {
+        background: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #data-list li button:hover {
+        background: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dynamic Data Storage</h1>
+    <input type="text" id="data-input" placeholder="Enter something" />
+    <button id="add-btn">Add</button>
+    <ul id="data-list"></ul>
+
+    <script>
+      const input = document.getElementById("data-input");
+      const addBtn = document.getElementById("add-btn");
+      const dataList = document.getElementById("data-list");
+
+      // Load stored data from localStorage
+      const loadData = () => {
+        const savedData = JSON.parse(localStorage.getItem("dynamicData")) || [];
+        dataList.innerHTML = "";
+        console.log(savedData);
+        
+        savedData.forEach((item, index) => addDataToDOM(item, index));
+      };
+
+      // Save data to localStorage
+      const saveData = (data) => {
+        localStorage.setItem("dynamicData", JSON.stringify(data));
+      };
+
+      // Add data to the DOM
+      const addDataToDOM = (text, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${text} <button onclick="deleteData(${index})">Delete</button>`;
+        dataList.appendChild(li);
+      };
+
+      // Add new data
+      addBtn.addEventListener("click", () => {
+        const text = input.value.trim();
+        if (text) {
+          const currentData = JSON.parse(localStorage.getItem("dynamicData")) || [];
+          currentData.push(text);
+          saveData(currentData);
+          addDataToDOM(text, currentData.length - 1);
+          input.value = "";
+        }
+      });
+
+      // Delete data
+      const deleteData = (index) => {
+        const currentData = JSON.parse(localStorage.getItem("dynamicData")) || [];
+        currentData.splice(index, 1);
+        saveData(currentData);
+        loadData();
+      };
+
+      // Initial load
+      loadData();
+    </script>
+  </body>
+</html>
