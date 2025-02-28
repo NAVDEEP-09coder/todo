@@ -1,0 +1,94 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startalytix</title>
+    <link rel="stylesheet" href="Startalytix.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .detailed-link {
+            background: #2c3e50;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .detailed-link:hover {
+            background: #3498db;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>Startalytix Analysis</h1>
+        <a href="detailed.html" class="detailed-link">Detailed Overview</a>
+    </div>
+
+    <div class="main1">
+        <div class="SUB">
+            <span>
+                <h3>Monthly Recurring Revenue</h3>
+                <p>10000$</p>
+            </span>
+        </div>
+        <div class="SUB">
+            <span>
+                <h3>Customer Acquisition Cost</h3>
+                <p>90$</p>
+            </span>
+        </div>
+        <div class="SUB">
+            <span>
+                <h3>Burn Rate</h3>
+                <p>999$ /month</p>
+            </span>
+        </div>
+        <div class="SUB">
+            <span>
+                <h3>Monthly Growth</h3>
+                <p>+20%$</p>
+            </span>
+        </div>
+    </div>
+
+    <div class="main2">
+        <div class="stats">
+            <canvas id="revc"></canvas>
+        </div>
+        <div class="stats">
+            <canvas id="ugc"></canvas>
+        </div>
+        <div class="stats">
+            <canvas id="burnc"></canvas>
+        </div>
+        <div class="stats">
+            <canvas id="cac"></canvas>
+        </div>
+    </div>
+
+    <div class="main3"
+        <center>
+            <br>
+            <h2>Competitive Analysis</h2>
+            <br>
+            <div class="stats">
+                <canvas id="comp"></canvas>
+            </div>
+        </center>
+        
+    </div>
+
+    <script src="Startalytix.js"></script>
+</body>
+</html>

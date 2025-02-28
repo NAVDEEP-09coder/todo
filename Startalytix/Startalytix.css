@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #E1E8ED;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.main1 {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.SUB {
+    background-color: white;
+    padding: 20px;
+    width: 90%;
+    height: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.SUB h3 {
+    color: #657786;
+    margin-bottom: 10px;
+}
+
+.SUB p {
+    color: #2c3e50;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.main2{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 30px;
+    padding: 0 20px;
+}
+.main3{
+    position: relative;
+    left: 300px;
+    align-content: center;
+
+}
+
+.stats {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: 300px;
+}
+
+h2 {
+    color: #2c3e50;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.SUB:hover {
+    transform: scale(1.1);
+}
+
+.main3 {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin-top: 50px;
+    align-content: center;
+    
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-analytics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.detcard {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+canvas{
+    max-height: 300px;
+}
+.detcard h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.detcard p {
+    color: #657786;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .main-analytics {
+        grid-template-columns: 1fr;
+    }
+    
+    .detcard {
+        padding: 20px;
+    }
+}
